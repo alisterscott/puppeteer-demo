@@ -1,4 +1,4 @@
-# WebDriverJs Demo
+# Puppeteer Demo
 
 A demo project that demonstrates how to use Puppeteer and how to run it using CircleCI.
 
