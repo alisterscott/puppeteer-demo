@@ -2,7 +2,7 @@ import assert from 'assert';
 import puppeteer from 'puppeteer';
 import config from 'config';
 
-describe( 'Puppeteer', function() {
+describe( 'Puppeteer', async function() {
 
 	this.timeout( config.get( 'mochaTimeoutMS' ) );
 
