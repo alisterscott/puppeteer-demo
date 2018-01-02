@@ -4,7 +4,7 @@ A demo project that demonstrates how to use Puppeteer and how to run it using Ci
 
 Build status: ![Build Status](https://circleci.com/gh/alisterscott/puppeteer-demo.svg?style=shield)
 
-## Pre-requisites
+## Prerequisites
 
 #### Make sure you have node-js installed, available via homebrew
 
