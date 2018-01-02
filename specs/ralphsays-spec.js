@@ -1,35 +1,20 @@
 import assert from 'assert';
-import webdriver from 'selenium-webdriver';
-import test from 'selenium-webdriver/testing';
+import puppeteer from 'puppeteer';
 import config from 'config';
-import RalphSaysPage from '../lib/ralph-says-page.js';
 
-let driver;
+describe( 'Puppeteer', function() {
 
-const mochaTimeoutMS = config.get( 'mochaTimeoutMS' );
+	this.timeout( config.get( 'mochaTimeoutMS' ) );
 
-test.describe( 'Ralph Says', function() {
-	this.timeout( mochaTimeoutMS );
-
-	test.before( function() {
-		driver = new webdriver.Builder().withCapabilities( webdriver.Capabilities.chrome() ).build();
+	it( 'works', async function() {
+		const browser = await puppeteer.launch();
+		const page = await browser.newPage();
+		let error = null;
+		await page.goto( config.get( 'ralphURL' ) ).catch( e => error = e );
+		assert.equal( error, null );
+		let found = false;
+		await page.waitFor( '#quote' ).then( () => found = true );
+		assert( found );
+		await browser.close();
 	} );
-
-	test.it( 'shows a quote container', function() {
-		var page = new RalphSaysPage( driver, true );
-		page.quoteContainerPresent().then( function( present ) {
-			assert.equal( present, true, 'Quote container not displayed' );
-		} );
-	} );
-
-	test.it( 'shows a non-empty quote', function() {
-		var page = new RalphSaysPage( driver, true );
-		page.quoteTextDisplayed().then( function( text ) {
-			assert.notEqual( text, '', 'Quote is empty' );
-		} );
-	} );
-
-	test.afterEach( () => driver.manage().deleteAllCookies() );
-
-	test.after( () => driver.quit() );
 } );

@@ -1,12 +1,12 @@
 # WebDriverJs Demo
 
-A demo project that demonstrates how to use WebDriverJs and how to run it using CircleCI.
+A demo project that demonstrates how to use Puppeteer and how to run it using CircleCI.
 
-Build status: ![Build Status](https://circleci.com/gh/alisterscott/webdriver-js-demo.svg?style=shield)
+Build status: ![Build Status](https://circleci.com/gh/alisterscott/puppeteer-demo.svg?style=shield)
 
 ## Pre-requisites
 
-#### Make sure you have node-js & chromedriver installed, available via homebrew
+#### Make sure you have node-js installed, available via homebrew
 
 `npm install`
 
