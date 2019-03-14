@@ -1,3 +1,4 @@
 {
-  "mochaTimeoutMS": 30000
+  "mochaTimeoutMS": 30000,
+  "baseURL": "https://webdriverjsdemo.github.io"
 }

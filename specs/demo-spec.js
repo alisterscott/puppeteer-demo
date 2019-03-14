@@ -15,7 +15,7 @@ describe( 'WebDriverJsDemo', function() {
 
 	it( 'can wait for an element to appear', async function() {
 		const page = await browser.newPage();
-		await page.goto( 'https://webdriverjsdemo.github.io' );
+		await page.goto( `${ config.get( 'baseURL' )}` );
 		await page.waitFor( '#elementappearschild', { visible: true, timeout: 5000 } );
 	} );
 
@@ -25,7 +25,7 @@ describe( 'WebDriverJsDemo', function() {
 			console.log(dialog.message());
 			await dialog.accept();
 		});
-		await page.goto( 'https://webdriverjsdemo.github.io/leave' );
+		await page.goto( `${ config.get( 'baseURL' )}/leave` );
 		await page.click( '#homelink' );
 		await page.waitFor( '#elementappearsparent', { visible: true, timeout: 5000 } );
 	} );
@@ -36,7 +36,7 @@ describe( 'WebDriverJsDemo', function() {
 		page.on('pageerror', pageerr => {
 			errors = errors + pageerr;
 		});
-		await page.goto( 'https://webdriverjsdemo.github.io/' );
+		await page.goto( `${ config.get( 'baseURL' )}` );
 		assert.equal( errors, '' );
 	} );
 
@@ -46,7 +46,7 @@ describe( 'WebDriverJsDemo', function() {
 		page.on('pageerror', pageerr => {
 			errors = errors + pageerr;
 		});
-		await page.goto( 'https://webdriverjsdemo.github.io/error' );
+		await page.goto( `${ config.get( 'baseURL' )}/error` );
 		assert.equal( errors, 'Error: Purple Monkey Dishwasher Error' );
 	} );
 
