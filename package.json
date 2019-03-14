@@ -15,7 +15,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "mocha --require babel-core/register specs"
+    "test": "./node_modules/mocha/bin/mocha --require babel-core/register specs"
   },
   "repository": {
     "type": "git",
