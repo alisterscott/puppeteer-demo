@@ -4,7 +4,7 @@ import config from 'config';
 
 const mochaTimeoutMS = config.get( 'mochaTimeoutMS' );
 
-describe( 'WebDriverJsDemo', function() {
+describe( 'Puppeteer 4', function() {
 	this.timeout( mochaTimeoutMS );
 
 	let browser;

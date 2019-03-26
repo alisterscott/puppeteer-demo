@@ -4,7 +4,7 @@ import config from 'config';
 
 const mochaTimeoutMS = config.get( 'mochaTimeoutMS' );
 
-describe( 'WebDriverJsDemo', function() {
+describe( 'Puppeteer 2', function() {
 	this.timeout( mochaTimeoutMS );
 
 	let browser;
@@ -13,7 +13,7 @@ describe( 'WebDriverJsDemo', function() {
 		browser = await puppeteer.launch();
 	} );
 
-	it( 'can wait for an element to appear', async function() {
+	it( 'can handle alerts', async function() {
 		const page = await browser.newPage();
 		page.on('dialog', async dialog => {
 			console.log(dialog.message());
