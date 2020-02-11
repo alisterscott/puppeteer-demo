@@ -12,7 +12,7 @@
     "lodash": "^4.17.15",
     "mocha": "^4.1.0",
     "mocha-parallel-tests": "^2.2.2",
-    "puppeteer": "^1.13.0"
+    "puppeteer": "^2.1.1"
   },
   "devDependencies": {},
   "scripts": {
