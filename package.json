@@ -9,7 +9,7 @@
     "babel-preset-es2015": "^6.24.1",
     "config": "^1.29.0",
     "eslint": "^4.18.2",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "mocha": "^4.1.0",
     "mocha-parallel-tests": "^2.2.2",
     "puppeteer": "^2.1.1"
